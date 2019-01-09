@@ -1,7 +1,7 @@
 # _Prince_L-VE-_11.1_
 一个正在开发中的Roguelike类型游戏，很渣，所以正在不断完善
 
-## 依赖环境:Windows
+## 依赖环境: Windows
 
 > 引擎：[LÖVE](https://love2d.org) v11.1  
 
