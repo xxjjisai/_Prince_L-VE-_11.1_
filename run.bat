@@ -9,3 +9,7 @@
 ::git add main.lua
 ::git commit -m 'log'
 ::git push origin master
+
+:: vscode 提交：
+:: 点击文件右边"+"号,点击左上角"..."选择 Commit Stage ,填写log, 再次点击左上角"..."选择 Push
+:: 如果可能有冲突先点击左上角"..."选择 Pull 更新同步代码
