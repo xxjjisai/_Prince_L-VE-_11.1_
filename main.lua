@@ -11,11 +11,10 @@ require("scripts/majors/base/System");
 require("scripts/majors/base/UI");
 
 require("settings/Option");
-require("settings/Include");
+require("settings/include");
 
 -- 系统列表
 function love.load()
-
     _G.graphicsWidth  = love.graphics.getWidth();
     _G.graphicsHeight = love.graphics.getHeight();
     _G.screenWidth, _G.screenHeight = love.window.getDesktopDimensions();

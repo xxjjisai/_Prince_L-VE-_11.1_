@@ -13,11 +13,11 @@ function Include:RequireSceneCfgHandler(strDir,sPath)
 end
 
 function Include:Import(pfn)
-    self:Trace(1," *** Do File Complete! *** ");
     self:GlobalConfig();
     self:ThirdPartyLibrary();
     self:GlobalManager();
     self:GlobalSystem();
+    self:Trace(1," *** Do File Complete! *** ");
     pfn(0,nil);
 end
 
