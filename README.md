@@ -1,6 +1,6 @@
 # _Prince_L-VE-_11.1_
 正在开发中的Roguelike类型游戏，很渣，所以正在不断完善
-
+![Image text](https://github.com/xxjjisai/_Prince_L-VE-_11.1_/blob/master/assets/textures/show.png)
 ## 依赖环境: 
 
 > 引擎：[LÖVE](https://love2d.org) v11.1  
