@@ -4,7 +4,7 @@
 ## 依赖环境: 
 
 > 引擎：[LÖVE](https://love2d.org) v11.1  
-### Windows环境下
+### Windows:
 
 ```git
 git clone https://github.com/xxjjisai/_Prince_L-VE-_11.1_.git
