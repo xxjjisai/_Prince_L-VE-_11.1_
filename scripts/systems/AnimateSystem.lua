@@ -2,7 +2,7 @@ _G.AnimateSystem = System:DeriveClass("AnimateSystem");
 
 AnimateSystem:SetRegisterCompo{
     "Animate",
-};
+}
 
 function AnimateSystem:Start()
     local iScene = self:GetCurScene();

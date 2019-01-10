@@ -2,7 +2,7 @@ _G.MapGeneratorSystem = System:DeriveClass("MapGeneratorSystem");
 
 MapGeneratorSystem:SetRegisterCompo{
     "Map","AStar"
-};
+}
 
 function MapGeneratorSystem:Start()
     local iScene = self:GetCurScene();

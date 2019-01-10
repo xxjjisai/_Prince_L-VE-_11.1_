@@ -2,7 +2,7 @@ _G.RectangleRenderSystem = System:DeriveClass("RectangleRenderSystem");
 
 RectangleRenderSystem:SetRegisterCompo{
    "RenderLayer","Rectangle","Size","Position","Color"
-};
+}
 
 function RectangleRenderSystem:Render()
    local iScene = self:GetCurScene();

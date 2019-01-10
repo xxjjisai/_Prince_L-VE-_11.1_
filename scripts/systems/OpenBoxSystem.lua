@@ -2,7 +2,7 @@ _G.OpenBoxSystem = System:DeriveClass("OpenBoxSystem");
 
 OpenBoxSystem:SetRegisterCompo{
     "Box","Position","Size",
-};
+}
 
 function OpenBoxSystem:MouseDown(x,y,button)
     if button == 1 then

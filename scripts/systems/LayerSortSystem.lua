@@ -2,7 +2,7 @@ _G.LayerSortSystem = System:DeriveClass("LayerSortSystem");
 
 LayerSortSystem:SetRegisterCompo{
    "RenderLayer",
-};
+}
 
 function LayerSortSystem:Update(dt)
     local iScene = self:GetCurScene();

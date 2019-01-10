@@ -2,7 +2,7 @@ _G.LeaveAndEnterSystem = System:DeriveClass("LeaveAndEnterSystem");
 
 LeaveAndEnterSystem:SetRegisterCompo{
     "SwitchScene",
-}; 
+}
 
 function LeaveAndEnterSystem:TriggerHandler()
     local iScene = self:GetCurScene();

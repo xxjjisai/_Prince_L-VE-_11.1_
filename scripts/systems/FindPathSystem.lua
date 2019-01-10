@@ -2,7 +2,7 @@ _G.FindPathSystem = System:DeriveClass("FindPathSystem");
 
 FindPathSystem:SetRegisterCompo{
     "AStar"
-};
+}
 
 function FindPathSystem:SearchPath(tbStartNode,tbEndNode,pfn)
     
@@ -68,7 +68,7 @@ function FindPathSystem:SearchPath(tbStartNode,tbEndNode,pfn)
                 table.insert( tbPath, tbCurrentNode.previous )
                 tbCurrentNode = tbCurrentNode.previous;
             end  
-            break ;
+            break 
         end
 
         table.remove(tbOpenList,nFirstIndex); 

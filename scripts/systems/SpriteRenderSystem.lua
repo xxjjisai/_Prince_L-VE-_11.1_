@@ -2,7 +2,7 @@ _G.SpriteRenderSystem = System:DeriveClass("SpriteRenderSystem");
 
 SpriteRenderSystem:SetRegisterCompo{
     "Sprite","Position"
-};
+}
 
 function SpriteRenderSystem:Render()
     local iScene = self:GetCurScene();

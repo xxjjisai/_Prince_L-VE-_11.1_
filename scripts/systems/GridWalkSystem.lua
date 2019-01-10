@@ -6,7 +6,7 @@ GridWalkSystem.tbEndPoint = nil;
 
 GridWalkSystem:SetRegisterCompo{
     "GridWalk"
-};
+}
 
 function GridWalkSystem:Start()
     self.bMoved = false;  

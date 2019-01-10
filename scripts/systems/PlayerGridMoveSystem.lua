@@ -4,7 +4,7 @@ PlayerGridMoveSystem.tbDataPlayer = {x = 0,y = 0};
 PlayerGridMoveSystem.tbPath = nil;
 PlayerGridMoveSystem:SetRegisterCompo{
     "GridWalk"
-};
+}
 
 function PlayerGridMoveSystem:Start()
     local iPlayer = SceneMgr:GetCurPlayer();
