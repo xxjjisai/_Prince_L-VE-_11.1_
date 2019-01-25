@@ -80,4 +80,5 @@ function Include:GlobalSystem()
     self:RequireHandler(strDir,"UITestSystem");
     self:RequireHandler(strDir,"LayerSortSystem");
     self:RequireHandler(strDir,"SpriteRenderSystem");
+    self:RequireHandler(strDir,"AnimationSystem");
 end

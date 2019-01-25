@@ -5,6 +5,7 @@ _G.AssetsTextureCfg = -- 贴图
     {    
         {sName = "grass",   sPath = "assets/textures/grass.png"  },
         {sName = "timg",   sPath = "assets/textures/timg.jpg"  },
+        {sName = "ball",   sPath = "assets/textures/ball.png"  },
         -- {sName = "timg",   sPath = "assets/textures/timg.jpg"  },
         -- {sName = "timg",   sPath = "assets/textures/timg.jpg"  },
         -- {sName = "timg",   sPath = "assets/textures/timg.jpg"  },

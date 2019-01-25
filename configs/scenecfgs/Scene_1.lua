@@ -21,5 +21,6 @@ _G.Scene_1 =
         "UITestSystem",
         "LayerSortSystem",
         "SpriteRenderSystem",
+        "AnimationSystem",
     };
 }
