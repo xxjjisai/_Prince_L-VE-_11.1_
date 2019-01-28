@@ -40,6 +40,9 @@ end
 
 function GridWalkSystem:MouseDown(x,y,button)
     if button == 1 then 
+
+        -- todo... 从其它系统获取可以点击的tile的位置数据
+
         if self.bMoved then return end 
         self.bMoved = true;
         self.tbEndPoint = nil;
