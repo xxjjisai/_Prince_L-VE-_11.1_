@@ -67,16 +67,17 @@ function Include:GlobalConfig()
 end
 
 function Include:GlobalSystem()
-    local strDir = "scripts/systems/";
-    self:RequireHandler(strDir,"RectangleRenderSystem");
-    self:RequireHandler(strDir,"MapGeneratorSystem");
-    self:RequireHandler(strDir,"GridWalkSystem");
-    self:RequireHandler(strDir,"OpenBoxSystem");
-    self:RequireHandler(strDir,"FindPathSystem");
-    self:RequireHandler(strDir,"PlayerTweenMoveSystem");
-    self:RequireHandler(strDir,"PlayerGridMoveSystem");
-    self:RequireHandler(strDir,"LeaveAndEnterSystem");
-    self:RequireHandler(strDir,"LayerSortSystem");
-    self:RequireHandler(strDir,"SpriteRenderSystem");
-    self:RequireHandler(strDir,"AnimationSystem");
+    local strCommonDir = "scripts/systems/common/";
+    self:RequireHandler(strCommonDir,"RectangleRenderSystem");
+    self:RequireHandler(strCommonDir,"LayerSortSystem");
+    self:RequireHandler(strCommonDir,"SpriteRenderSystem");
+    self:RequireHandler(strCommonDir,"AnimationSystem");
+    local strMysystemDir = "scripts/systems/mysystem/";
+    self:RequireHandler(strMysystemDir,"MapGeneratorSystem");
+    self:RequireHandler(strMysystemDir,"GridWalkSystem");
+    self:RequireHandler(strMysystemDir,"OpenBoxSystem");
+    self:RequireHandler(strMysystemDir,"FindPathSystem");
+    self:RequireHandler(strMysystemDir,"PlayerTweenMoveSystem");
+    self:RequireHandler(strMysystemDir,"PlayerGridMoveSystem");
+    self:RequireHandler(strMysystemDir,"LeaveAndEnterSystem");
 end

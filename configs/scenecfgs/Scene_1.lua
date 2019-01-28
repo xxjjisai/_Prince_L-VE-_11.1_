@@ -5,7 +5,7 @@ _G.Scene_1 =
     {
         { sActorType = "Player"; },
         { sActorType = "Map"; tbProperty = {
-            ["Map"] = { nCellCount = 115 };
+            ["Map"] = { nCellCount = 7 };
         }},
     };
 
