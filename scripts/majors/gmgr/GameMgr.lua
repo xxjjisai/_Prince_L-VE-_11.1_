@@ -28,13 +28,14 @@ function GameMgr:Update(dt)
     elseif Option.sGameState == "GUODU" then 
         GuoDuMgr:Update(dt);
     elseif Option.sGameState == "PAUSE" then 
+
     elseif Option.sGameState == "PLAY" then 
         CameraMgr:Update(dt); 
         SceneMgr:Update(dt)
-    elseif Option.sGameState == "UI" then 
-        UIMgr:Update(dt)
-    elseif Option.sGameState == "EDITOR" then  
+    elseif Option.sGameState == "EDITOR" then 
+
     elseif Option.sGameState == "OVER" then 
+
     end
 end 
 
@@ -51,33 +52,21 @@ function GameMgr:Render()
         PauseMgr:Render();
     elseif Option.sGameState == "PLAY" then 
         SceneMgr:Render();
-    elseif Option.sGameState == "UI" then  
-        UIMgr:Render();
-    elseif Option.sGameState == "EDITOR" then  
+    elseif Option.sGameState == "EDITOR" then 
+
     elseif Option.sGameState == "OVER" then 
         OverMgr:Render();
     end
 end 
 
-function GameMgr:MouseDown(x,y,button)
+function GameMgr:MouseDown(x, y, button, istouch, presses)
     if Option.sGameState == "PLAY" then
         CameraMgr:MouseDown(x,y,button);
-        SceneMgr:MouseDown(x,y,button);
-        UIMgr:MouseDown(x,y,button);
-    end   
-    if Option.sGameState == "UI" then 
-        UIMgr:MouseDown(x,y,button);
-    end
-    if button == 2 then 
-        if Option.sGameState == "PLAY" then 
-            Option.sGameState = "UI";
-        elseif Option.sGameState == "UI" then 
-            Option.sGameState = "PLAY";
-        end 
-    end 
+        SceneMgr:MouseDown(x, y, button, istouch, presses);
+    end    
 end
 
-function GameMgr:MouseUp(x,y,button)  
+function GameMgr:MouseUp(x, y, button, istouch, presses)  
     if Option.sGameState == "MENU" then 
         if Option.bMenuPlayed == true then
             Option.sGameState = "GUODU"
@@ -87,9 +76,20 @@ function GameMgr:MouseUp(x,y,button)
             end);
         end
     end
+
+    if Option.sGameState == "PLAY" then 
+        SceneMgr:MouseUp(x, y, button, istouch, presses)  
+    end
+
 end
 
-function GameMgr:KeyBoardDown(key) 
+function GameMgr:MouseMoved(x, y, dx, dy, istouch)
+    if Option.sGameState == "PLAY" then 
+        SceneMgr:MouseMoved(x, y, dx, dy, istouch)
+    end
+end
+
+function GameMgr:KeyBoardDown(key, scancode, isrepeat) 
     if key == 'tab' then Option.bDebug = not Option.bDebug end
     if key == "return" then 
         if Option.sGameState == "MENU" then 
@@ -101,24 +101,6 @@ function GameMgr:KeyBoardDown(key)
                 end);
             end
         end
-    end
-
-    if key == "1" then 
-        SceneMgr:SetAppointScene(1)
-    end
-    if key == "2" then 
-        SceneMgr:SetAppointScene(2)
-    end
-    if key == "3" then 
-        SceneMgr:SetAppointScene(3)
-    end
-
-    if key == "z" then 
-        if Option.sGameState == "PLAY" then 
-            Option.sGameState = "UI";
-        elseif Option.sGameState == "UI" then 
-            Option.sGameState = "PLAY";
-        end 
     end 
 
     if key == "p" then   
@@ -130,11 +112,28 @@ function GameMgr:KeyBoardDown(key)
             Option.sGameState = PauseMgr.sOldGameState;
         end 
     end 
+
+    if Option.sGameState == "PLAY" then 
+        SceneMgr:KeyBoardDown(key, scancode, isrepeat) 
+    end
+end
+
+function GameMgr:KeyBoardUp(key, scancode)
+    if Option.sGameState == "PLAY" then 
+        SceneMgr:KeyBoardUp(key, scancode)
+    end
 end
 
 function GameMgr:WheelMoved(x, y)
     if Option.sGameState == "PLAY" then 
         CameraMgr:WheelMoved(x, y);
+        SceneMgr:WheelMoved(x, y);
+    end
+end
+
+function GameMgr:TextInput(text)
+    if Option.sGameState == "PLAY" then 
+        SceneMgr:TextInput(text)
     end
 end
 

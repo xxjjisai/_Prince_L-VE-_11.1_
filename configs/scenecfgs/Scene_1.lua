@@ -18,7 +18,6 @@ _G.Scene_1 =
         "PlayerTweenMoveSystem",
         "FindPathSystem",
         "LeaveAndEnterSystem",
-        "UITestSystem",
         "LayerSortSystem",
         "SpriteRenderSystem",
         "AnimationSystem",

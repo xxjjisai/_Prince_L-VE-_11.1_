@@ -46,7 +46,6 @@ function Include:GlobalManager()
     self:RequireHandler(strDir,"CameraMgr");
     self:RequireHandler(strDir,"PauseMgr");
     self:RequireHandler(strDir,"OverMgr");
-    self:RequireHandler(strDir,"UIMgr");
 end 
 
 function Include:GlobalConfig()
@@ -77,7 +76,6 @@ function Include:GlobalSystem()
     self:RequireHandler(strDir,"PlayerTweenMoveSystem");
     self:RequireHandler(strDir,"PlayerGridMoveSystem");
     self:RequireHandler(strDir,"LeaveAndEnterSystem");
-    self:RequireHandler(strDir,"UITestSystem");
     self:RequireHandler(strDir,"LayerSortSystem");
     self:RequireHandler(strDir,"SpriteRenderSystem");
     self:RequireHandler(strDir,"AnimationSystem");

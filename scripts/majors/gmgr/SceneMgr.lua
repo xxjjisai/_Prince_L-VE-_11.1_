@@ -5,6 +5,7 @@ SceneMgr.nSceneID = 0;
 SceneMgr.bStart = false;
 SceneMgr.iPlayer = false;
 SceneMgr.tbSceneList = {};
+SceneMgr.nPlayerIndex = 1;
 
 function SceneMgr:Start()
     self.bStart = false;
@@ -24,6 +25,10 @@ end
 
 function SceneMgr:GetCurPlayer()
     return self.iPlayer;
+end
+
+function SceneMgr:SetCurPlayer(iPlayer)
+    self.iPlayer = iPlayer;
 end
 
 function SceneMgr:GetCurScene()
@@ -103,6 +108,7 @@ function SceneMgr:Update(dt)
     local py = self.iPlayer:GetiCompo("Position").y;
     local pw = self.iPlayer:GetiCompo("Size").w;
     local ph = self.iPlayer:GetiCompo("Size").h;
+    -- print(self.iPlayer.sClassName,px, py ,pw ,ph)
     Camera:follow(px + pw * 0.5, py + ph * 0.5); 
 end 
 
@@ -135,12 +141,83 @@ function SceneMgr:Render()
     end
 end
 
-function SceneMgr:MouseDown(x,y,button)   
+function SceneMgr:MouseDown(x, y, button, istouch, presses)   
     if self.bStart then 
         local tbSystemList = self.tbCurScene:GetSystemList();
         for _,iSystem in ipairs(tbSystemList) do 
             if iSystem.MouseDown then 
-                iSystem:MouseDown(x,y,button);
+                iSystem:MouseDown(x, y, button, istouch, presses);
+            end
+        end
+    end
+end
+
+function SceneMgr:MouseUp(x, y, button, istouch, presses)  
+    if self.bStart then 
+        local tbSystemList = self.tbCurScene:GetSystemList();
+        for _,iSystem in ipairs(tbSystemList) do 
+            if iSystem.MouseUp then 
+                iSystem:MouseUp(x, y, button, istouch, presses);
+            end
+        end
+    end
+end
+
+function SceneMgr:MouseMoved(x, y, dx, dy, istouch)
+    if self.bStart then 
+        local tbSystemList = self.tbCurScene:GetSystemList();
+        for _,iSystem in ipairs(tbSystemList) do 
+            if iSystem.MouseMoved then 
+                iSystem:MouseMoved(x, y, dx, dy, istouch);
+            end
+        end
+    end
+end
+
+function SceneMgr:KeyBoardDown(key, scancode, isrepeat) 
+    if self.bStart then 
+        local tbSystemList = self.tbCurScene:GetSystemList();
+        for _,iSystem in ipairs(tbSystemList) do 
+            if iSystem.KeyBoardDown then 
+                iSystem:KeyBoardDown(key, scancode, isrepeat);
+            end
+        end
+
+        if key == "space" then 
+            self.nPlayerIndex = self.nPlayerIndex + 1;
+            self.iPlayer,self.nPlayerIndex = self.tbCurScene:GetPlayer(self.nPlayerIndex)
+        end 
+    end
+end
+
+function SceneMgr:KeyBoardUp(key, scancode)
+    if self.bStart then 
+        local tbSystemList = self.tbCurScene:GetSystemList();
+        for _,iSystem in ipairs(tbSystemList) do 
+            if iSystem.KeyBoardUp then 
+                iSystem:KeyBoardUp(key, scancode);
+            end
+        end
+    end
+end
+
+function SceneMgr:WheelMoved(x, y)
+    if self.bStart then 
+        local tbSystemList = self.tbCurScene:GetSystemList();
+        for _,iSystem in ipairs(tbSystemList) do 
+            if iSystem.WheelMoved then 
+                iSystem:WheelMoved(x, y);
+            end
+        end
+    end
+end
+
+function SceneMgr:TextInput(text)
+    if self.bStart then 
+        local tbSystemList = self.tbCurScene:GetSystemList();
+        for _,iSystem in ipairs(tbSystemList) do 
+            if iSystem.TextInput then 
+                iSystem:TextInput(text);
             end
         end
     end

@@ -8,7 +8,7 @@ require("scripts/majors/base/Actor");
 require("scripts/majors/base/Compo");
 require("scripts/majors/base/Scene");
 require("scripts/majors/base/System");
-require("scripts/majors/base/UI");
+require("scripts/majors/base/Model");
 
 require("settings/Option");
 require("settings/include");
@@ -66,19 +66,25 @@ end
 
 --------------------------------------
 
-function love.mousepressed(x,y,button)
+function love.mousepressed(x, y, button, istouch, presses)
     if Option.bDoFileComplete == true then 
-        GameMgr:MouseDown(x,y,button);
+        GameMgr:MouseDown(x, y, button, istouch, presses);
     end 
 end 
 
-function love.mousereleased(x,y,button)
+function love.mousereleased(x, y, button, istouch, presses)
     if Option.bDoFileComplete == true then
-        GameMgr:MouseUp(x,y,button);
+        GameMgr:MouseUp(x, y, button, istouch, presses);
     end 
 end
 
-function love.keypressed(key)
+function love.mousemoved(x, y, dx, dy, istouch)
+    if Option.bDoFileComplete == true then
+        GameMgr:MouseMoved(x, y, dx, dy, istouch);
+    end 
+end
+
+function love.keypressed(key, scancode, isrepeat)
     if key == "r" then 
         love.event.quit("restart");
     end 
@@ -86,13 +92,25 @@ function love.keypressed(key)
         love.event.quit();
     end 
     if Option.bDoFileComplete == true then
-        GameMgr:KeyBoardDown(key);
+        GameMgr:KeyBoardDown(key, scancode, isrepeat);
     end 
 end  
+
+function love.keyreleased(key, scancode)
+    if Option.bDoFileComplete == true then
+        GameMgr:KeyBoardUp(key, scancode);
+    end 
+end
 
 function love.wheelmoved(x, y)
     if Option.bDoFileComplete == true then
         GameMgr:WheelMoved(x, y); 
+    end
+end
+
+function love.textinput(text)
+    if Option.bDoFileComplete == true then
+        GameMgr:TextInput(text); 
     end
 end
 
