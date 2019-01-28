@@ -72,6 +72,7 @@ function Include:GlobalSystem()
     self:RequireHandler(strCommonDir,"LayerSortSystem");
     self:RequireHandler(strCommonDir,"SpriteRenderSystem");
     self:RequireHandler(strCommonDir,"AnimationSystem");
+    
     local strMysystemDir = "scripts/systems/mysystem/";
     self:RequireHandler(strMysystemDir,"MapGeneratorSystem");
     self:RequireHandler(strMysystemDir,"GridWalkSystem");
